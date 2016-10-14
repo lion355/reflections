@@ -1,0 +1,38 @@
+git init
+# creates a new git repository in the current directory
+
+git log
+# returns "fatal: bad default revision 'HEAD', because no commits were made yet
+
+git status
+# shows on which branch we are, wich most recent commit and what files aren't committed yet
+
+What happens when you initialize a repository? Why do you need to do it?
+-> a new repository is created, but no commit is automatically done
+-> if I want to create a new project then I need to do it to get it under Git version control
+
+With git init you create a new empty directory. You can then go ahead and add files from your working directory to a stating area, meaning selecting the appropriate files, and then committing these to the repository.
+
+git add filename
+# adds existing files to the staging area, ready to commit
+
+git status
+# shows the added files as new files and not untracked files
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+-> it's more of a preparation layer than anything else
+-> it's useful for carefully selecting files to commit without losing track of everything
+
+git commit
+# command to commit your files in the staging area
+
+git commit -m "commit message"
+# commit command with a commit message specified on the command line
+
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
+# used to configure name and email address used with commits
+
+git commit --amend --reset-author
+# fix a commit with the wrong author after setting it right with git config
+
