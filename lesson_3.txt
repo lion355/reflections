@@ -1,0 +1,15 @@
+git remote
+# see all remote connections
+
+git remote add repositoryname link-to-remote-repo
+# e.g. repositoryname = origin
+# to add a new remote repository
+
+git remote add origin https://github.com/lion355/reflections.git
+# to add a new remote repo to github
+
+git remote -v
+# a verbose view of all remotes
+
+git push origin master
+# to push local changes to github
