@@ -36,3 +36,67 @@ git config --global user.email you@example.com
 git commit --amend --reset-author
 # fix a commit with the wrong author after setting it right with git config
 
+git diff
+# with no argument git diff compares the working directory to the staging area
+
+git diff --staged
+# compares the staging area to the last commit in the repository
+
+git reset --hard
+# resets all changes in the working dir and staging area - careful!!
+
+How can you use the staging area to make sure you have one commit per logical change?
+-> with git add and diff you can be sure that only files with the logical change are added
+
+git branch
+# shows all branches and highlights the one you are workng on
+
+git branch branchname
+# creates a new branch
+
+git checkout branchname
+# switches to the branch
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+-> when new features are introduced that are experimental or edit core logic that is to be preserved or that adds a new language or logic
+
+git log --graph --oneline master coins
+# soo see a graphical overview of the logs
+
+git checkout -b branchname
+# creates a new branch and checks it out, shorthand for the two upper commands
+
+How do the diagrams help you visualize the branch structure?
+-> shows their history and which commits are unreachable
+
+git show commitid
+# shows changes only from direct parent
+
+git merge branchname branchname2
+# to merge two branches together
+
+git merge --abort
+# if you run into a merge conflict and want to undo the merge
+
+-----------------------------
+# How to merge
+
+git checkout branch-to-merge-to
+# switch to the branch to merge something to
+
+git merge branch-to-merge-from branch-to-merge-to
+# merge one branch to the other
+
+git status
+# shows unmerged paths and other information
+
+# open conflicting files, search for "HEAD" and resolve the conflicts
+
+git add conflicting-file
+# after resolving all conflicts, add the files to the staging mode
+
+git commit
+# commit the changes from the staging area
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+With automatic merging you know that there is no faulty error through the merging itself introduced, manual merging allows for individual analysis of merge conflicts, which gives greater flexibility, but also greater risk for mistakes.
